@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emily Brontë - A Short Biography</title>
+
+  <!-- W3.CSS -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=EB+Garamond:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+      <div class="hero-box w3-animate-opacity">
+        <h1 class="w3-xxxlarge w3-margin-bottom title-font">Emily Brontë</h1>
+        <!-- IMAGE SECTION -->
+          <section class="w3-container w3-margin-bottom fade-in">
+            <div class="gothic-frame">
+                <img src="img/emily-bronte-01.png" class="w3-circle"
+                alt="Portrait of Emily Brontë, English writer and poet">
+                
+            </div>
+          </section>
+        <p class="w3-xlarge soft-text">English Writer and Poet</p>
+        <hr class="accent-line">
+        <p class="w3-large soft-text">
+          A short biography created for the English Instrumental – Agenda 03 activity.
+        </p>
+        <a href="#biography" class="w3-button w3-margin-top custom-button">Read More</a>
+
+        <!-- Music Toggle Button -->
+        <button id="music-btn" onclick="toggleMusic()" class="w3-button custom-button w3-margin-top button-spacing">
+          🎧 Play Music
+        </button>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+     <section class="main-bg">
+        <main class="w3-content w3-padding-64" style="max-width: 1000px;">
+
+          
+
+          <!-- BIOGRAPHY -->
+          <section id="biography" class="w3-container w3-margin-bottom ">
+            <div class="w3-padding-32 w3-padding-large section-card fade-in">
+              <h2 class="w3-xxlarge title-font">Biography</h2>
+              <p class="w3-large soft-text">
+                Emily Brontë was an English writer and poet. She was born in 1818 in England.
+                She is famous for writing the novel <strong>Wuthering Heights</strong>, published in 1847
+                under the name Ellis Bell. Emily also wrote poems with her sisters Charlotte and Anne Brontë.
+                Her work became very important in English literature because of its dark style, strong emotions,
+                and Gothic atmosphere. At first, some critics did not like her novel, but later it became a classic.
+                Emily Brontë died in 1848, but her work is still admired around the world today.
+              </p>
+            </div>
+          </section>
+
+          <!-- MAIN WORK -->
+          <section class="w3-container w3-margin-bottom">
+            <div class="w3-padding-32 w3-padding-large section-card fade-in">
+              <h2 class="w3-xxlarge title-font">Main Work</h2>
+              <p class="w3-large soft-text">
+                Emily Brontë’s most famous work is <strong>Wuthering Heights</strong>, published in 1847.
+                The novel tells the intense and tragic story of Heathcliff and Catherine,
+                set in the wild moors of northern England. Its dark atmosphere, emotional
+                conflicts, and complex characters made it very different from other novels
+                of its time. Today, the book is widely studied and continues to fascinate
+                readers with its powerful and dramatic story.
+              </p>
+            </div>
+          </section>
+
+          <!-- QUOTE / LEGACY -->
+          <section class="w3-container w3-margin-bottom">
+            <div class="w3-padding-32 w3-padding-large quote-box section-card fade-in">
+              <h2 class="w3-xxlarge title-font">Legacy</h2>
+              <p class="w3-xlarge soft-text">
+                Emily Brontë’s writing continues to inspire readers and writers around the
+                world. Although she published only one novel, her unique voice and powerful
+                imagination left a lasting mark on literary history.
+              </p>
+            </div>
+          </section>
+
+        </main>
+      </section>
+
+    <!-- FOOTER -->
+    <footer class="w3-center w3-padding-20">    
+      <p class="footer-text">
+        Inglês Instrumental – Agenda 03
+      </p>
+      <p class="footer-text">
+        This site was created for educational purposes.
+      </p>
+    </footer>
+
+    <div style="display: flex; justify-content: center; ">
+      <audio id="bg-music"  loop>
+        <source src="msc/WutheringHeights.MP3" type="audio/mpeg">
+      </audio>
+    </div>
+
+    <!-- Music Toggle Script -->
+    <script>
+      let isPlaying = false;
+
+      function toggleMusic() {
+        const music = document.getElementById("bg-music");
+        const btn = document.getElementById("music-btn");
+
+        if (!isPlaying) {
+          music.play();
+          btn.innerHTML = "⏸ Pause Music";
+          isPlaying = true;
+        } else {
+          music.pause();
+          btn.innerHTML = "🎧 Play Music";
+          isPlaying = false;
+        }
+      }
+    </script>
+
+    <!-- Fade-in Animation Script -->
+    <script>
+      const elements = document.querySelectorAll(".fade-in");
+
+      function checkScroll() {
+        elements.forEach(el => {
+          const top = el.getBoundingClientRect().top;
+
+          if (top < window.innerHeight - 50) {
+            el.classList.add("visible");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", checkScroll);
+      window.addEventListener("load", checkScroll);
+    </script>
+
+</body>
+</html>
